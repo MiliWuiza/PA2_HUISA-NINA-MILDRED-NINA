@@ -1,0 +1,200 @@
+:root{
+  --lago:#0d3b4a;
+  --agua:#2a7f9a;
+  --totora:#d4a72c;
+  --tejido:#b0306a;
+  --cielo:#eaf2f4;
+  --blanco:rgb(255,255,255);
+  --texto:rgb(28,43,48);
+  --sombra:rgba(13,59,74,.18);
+  --espacio-s:.5rem;
+  --espacio-m:1.25rem;
+  --espacio-l:2.5rem;
+  --radio:.9rem;
+  --ancho-max:68.75rem;
+  --ancho-mapa:50rem;
+
+  --fuente-titulo:'Poppins',Arial,sans-serif;
+  --fuente-texto:'Open Sans',Arial,sans-serif;
+  --transicion:.3s ease;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--fuente-texto);
+  font-size:1rem;
+  color:var(--texto);
+  background:var(--cielo);
+  line-height:1.6;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--tejido)}
+:focus-visible{outline:.2rem solid var(--totora);outline-offset:.2rem}
+
+/* ENCABEZADO */
+.encabezado{background:var(--lago);color:var(--blanco)}
+.encabezado__interior{
+  max-width:var(--ancho-max);margin:0 auto;
+  padding:var(--espacio-s) var(--espacio-m);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--espacio-s);
+}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--fuente-titulo);
+     font-size:1.3rem;font-weight:700;color:var(--blanco);text-decoration:none}
+.logo img{width:2.25rem;height:2.25rem}
+.menu{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.menu a{display:block;padding:.5rem .9rem;border-radius:99rem;color:var(--blanco);
+        text-decoration:none;transition:background-color var(--transicion),color var(--transicion)}
+.menu a:hover,
+.menu a[aria-current="page"]{background:var(--totora);color:var(--lago)}
+.menu li:last-child a{border:.1rem solid var(--totora)}   /* selector estructural: último ítem */
+
+/* PORTADA */
+.portada{max-width:var(--ancho-max);margin:0 auto;padding:var(--espacio-l) var(--espacio-m) var(--espacio-s)}
+.portada h1{font-family:var(--fuente-titulo);font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:0 0 .8rem;color:var(--lago)}
+.portada p{max-width:60ch;font-size:1.1rem;margin:0}
+
+/* MAPA INTERACTIVO */
+.mapa{max-width:var(--ancho-max);margin:0 auto;padding:var(--espacio-m)}
+.mapa figure{margin:0;background:var(--blanco);border-radius:var(--radio);padding:1rem;box-shadow:0 .4rem 1.1rem var(--sombra)}
+.mapa img{width:100%;max-width:var(--ancho-mapa);margin:0 auto;border-radius:.6rem}
+.mapa figcaption{text-align:center;font-size:.95rem;margin-top:.6rem;color:rgb(65,86,93)}
+
+/* LUGARES TURISTICOS */
+.lugares{
+  max-width:var(--ancho-max);margin:0 auto;
+  padding:var(--espacio-s) var(--espacio-m) var(--espacio-m);
+  display:grid;gap:1.1rem;
+  grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));
+}
+.lugar{
+  background:var(--blanco);border-radius:var(--radio);padding:1.4rem;
+  border-top:.4rem solid var(--agua);
+  -webkit-transition:transform var(--transicion),box-shadow var(--transicion);
+  transition:transform var(--transicion),box-shadow var(--transicion);
+}
+.lugar:hover,
+.lugar:target{transform:translateY(-.4rem);box-shadow:0 .8rem 1.5rem var(--sombra)}
+.lugar:target{border-top-color:var(--tejido)}
+.lugar:nth-child(3n){border-top-color:var(--totora)}      /* cada tercera tarjeta */
+.lugar--tierra,
+.lugar--tierra:nth-child(3n){border-top-color:var(--tejido)}
+.lugar h2{font-family:var(--fuente-titulo);margin:0 0 .5rem;color:var(--lago);font-size:1.4rem}
+.lugar p{margin:0}
+
+/* ===== GALERIA ===== */
+.galeria{max-width:var(--ancho-max);margin:0 auto;padding:var(--espacio-m)}
+.galeria h2{font-family:var(--fuente-titulo);color:var(--lago)}
+.galeria__rejilla{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.foto{margin:0;overflow:hidden;border-radius:var(--radio);background:var(--blanco)}
+.foto img{
+  width:100%;height:14rem;object-fit:cover;
+  -webkit-filter:grayscale(80%);filter:grayscale(80%);
+  opacity:.8;
+  -webkit-transition:-webkit-filter .4s,opacity .4s,-webkit-transform .4s;
+  transition:filter .4s,opacity .4s,transform .4s;
+}
+.foto:hover img{-webkit-filter:grayscale(0);filter:grayscale(0);opacity:1;-webkit-transform:scale(1.08);transform:scale(1.08)}
+.foto figcaption{padding:.6rem .9rem;font-size:.95rem}
+.foto:nth-child(even) figcaption{background:var(--cielo)}   /* fotos pares con fondo distinto */
+
+/* ===== PIE DE PAGINA ===== */
+.pie{background:var(--lago);
+     color:var(--blanco);
+     text-align:center;
+     padding:1.4rem var(--espacio-m);
+     margin-top:var(--espacio-l)}
+.pie p{margin:0}
+
+/* ============= HACKS ============== */
+@supports (aspect-ratio:3/2){
+  .foto img{height:auto;aspect-ratio:3/2}
+}
+
+/* Hack 3: solo Chrome y Safari (motor WebKit) suavizan mejor el texto. */
+@media screen and (-webkit-min-device-pixel-ratio:0){
+  body{-webkit-font-smoothing:antialiased}
+}
+
+@media (max-width:37.5rem){
+  .encabezado__interior{justify-content:center}
+  .menu{justify-content:center}
+  .portada{padding-top:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{-webkit-transition:none!important;transition:none!important;animation:none!important}
+}
+
+/* TABLA PARA PAGINA CULTIVOS */
+.tabla-seccion{max-width:var(--ancho-max);margin:0 auto;padding:var(--espacio-m)}
+.tabla-seccion h2{font-family:var(--fuente-titulo);color:var(--lago)}
+.tabla-responsive{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radio);box-shadow:0 .4rem 1.1rem var(--sombra)}
+.tabla-cultivos{
+  width:100%;
+  min-width:calc(var(--ancho-mapa) - 14rem);   /* calc() + var(): ancho mínimo para que haga scroll en celular */
+  border-collapse:collapse;
+  background:var(--blanco);
+}
+.tabla-cultivos caption{
+  caption-side:top;text-align:left;padding:.9rem 1rem;
+  font-family:var(--fuente-titulo);font-weight:700;color:var(--lago);background:var(--blanco);
+}
+.tabla-cultivos th,
+.tabla-cultivos td{padding:.8rem 1rem;text-align:left;border-bottom:.06rem solid rgba(13,59,74,.15)}
+.tabla-cultivos thead th{background:var(--lago);color:var(--blanco)}
+.tabla-cultivos tbody th{color:var(--tejido);font-family:var(--fuente-titulo)}
+.tabla-cultivos tbody tr:nth-child(even){background:var(--cielo)}
+.tabla-cultivos tbody tr{transition:background-color var(--transicion);animation:entrada .6s ease both}
+.tabla-cultivos tbody tr:nth-child(2){animation-delay:.1s}
+.tabla-cultivos tbody tr:nth-child(3){animation-delay:.2s}
+.tabla-cultivos tbody tr:nth-child(4){animation-delay:.3s}
+.tabla-cultivos tbody tr:hover{background:rgba(212,167,44,.3)}
+.tabla-cultivos tfoot td{font-size:.9rem;font-style:italic;background:var(--blanco)}
+.lugar ul{margin:0;padding-left:1.2rem}
+@keyframes entrada{from{opacity:0;transform:translateY(.8rem)}to{opacity:1;transform:none}}
+
+@media (max-width:37.5rem){
+  .tabla-cultivos th,.tabla-cultivos td{padding:.55rem .7rem;font-size:.9rem}
+}
+
+/* FORMULARIO PARA PAGINA CONTACTO */
+.formulario-seccion{max-width:44rem;margin:0 auto;padding:var(--espacio-m)}
+.formulario{
+  display:grid;gap:1.1rem;
+  background:var(--blanco);border-radius:var(--radio);
+  padding:1.6rem;box-shadow:0 .4rem 1.1rem var(--sombra);
+}
+.campo{display:flex;flex-direction:column;gap:.35rem;border:0;margin:0;padding:0}
+.campo label,
+.campo legend{font-weight:700;color:var(--lago)}
+.campo small{color:rgb(65,86,93);font-size:.85rem}
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo input[type="date"],
+.campo select,
+.campo textarea{
+  width:100%;padding:.7rem .8rem;font:inherit;color:var(--texto);
+  border:.1rem solid rgba(13,59,74,.35);border-radius:.5rem;background:var(--blanco);
+  transition:border-color var(--transicion),box-shadow var(--transicion);
+}
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus{border-color:var(--agua);box-shadow:0 0 0 .2rem rgba(42,127,154,.25);outline:none}
+.campo input:not(:placeholder-shown):invalid{border-color:var(--tejido)}
+.opcion{display:flex;align-items:center;gap:.5rem;font-weight:400;color:var(--texto);padding:.15rem 0}
+.opcion input{inline-size:1.1rem;block-size:1.1rem;accent-color:var(--tejido)}
+.boton{
+  justify-self:start;padding:.8rem 1.6rem;font:inherit;font-weight:700;
+  color:var(--lago);background:var(--totora);border:0;border-radius:99rem;cursor:pointer;
+  transition:transform var(--transicion),background-color var(--transicion),color var(--transicion);
+}
+.boton:hover{background:var(--tejido);color:var(--blanco);transform:translateY(-.15rem)}
+.resultado{margin:0;font-weight:700;color:var(--agua)}
+@media (min-width:48rem){
+  .formulario{grid-template-columns:1fr 1fr}
+  .formulario .campo:nth-last-of-type(1),
+  .formulario fieldset,
+  .formulario .boton,
+  .formulario .resultado{grid-column:1 / -1}
+}
