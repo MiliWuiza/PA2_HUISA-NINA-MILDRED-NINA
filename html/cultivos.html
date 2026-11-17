@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cultivos y ganadería de Ayaviri, Puno: papa, quinua, avena y alfalfa, con sus épocas de siembra y cosecha.">
+  <meta name="author" content="Mildred Zenia Huisa Nina">
+  <meta name="keywords" content="Ayaviri, cultivos, papa, quinua, avena, alfalfa, ganadería">
+  <meta name="theme-color" content="#0d3b4a">
+  <title>Cultivos de mi tierra | Mildred</title>
+  <link rel="icon" type="image/svg+xml" href="../img/logop.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <a class="logo" href="../index.html"><img src="../img/logop.svg" alt=""></a>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="puno.html">Puno</a></li>
+          <li><a href="cultivos.html" aria-current="page">Cultivos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada">
+      <h1>Lo que da la tierra en Ayaviri</h1>
+      <p>En mi zona el trabajo del campo marca el ritmo del año. Estos son los cultivos principales y cuándo se siembran y se cosechan.</p>
+    </section>
+
+    <section class="mapa" aria-labelledby="titulo-campo">
+      <h2 id="titulo-campo" style="position:absolute;left:-9999px">Foto del campo</h2>
+      <figure>
+        <picture>
+          <source media="(max-width:600px)" srcset="../img/cultivos-480.jpg">
+          <source media="(min-width:601px)" srcset="../img/cultivos-900.jpg">
+          <img src="../img/cultivos-900.jpg" alt="Chacras de cultivo en Ayaviri" loading="lazy">
+        </picture>
+        <figcaption>Chacras de mi comunidad en Ayaviri.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Tabla con estilos personalizados -->
+    <section class="tabla-seccion" aria-labelledby="titulo-tabla">
+      <h2 id="titulo-tabla">Calendario de cultivos</h2>
+      <div class="tabla-responsive">
+        <table class="tabla-cultivos">
+          <caption>Cultivos principales de Ayaviri (fechas aproximadas)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Cultivo</th>
+              <th scope="col">Siembra</th>
+              <th scope="col">Cosecha</th>
+              <th scope="col">Uso principal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Papa</th>
+              <td>Setiembre a noviembre</td>
+              <td>Abril a junio</td>
+              <td>Alimento de la familia y venta</td>
+            </tr>
+            <tr>
+              <th scope="row">Quinua</th>
+              <td>Octubre a noviembre</td>
+              <td>Abril a mayo</td>
+              <td>Alimento y venta</td>
+            </tr>
+            <tr>
+              <th scope="row">Avena</th>
+              <td>Noviembre a diciembre</td>
+              <td>Abril a mayo</td>
+              <td>Forraje para el ganado</td>
+            </tr>
+            <tr>
+              <th scope="row">Alfalfa</th>
+              <td>4ta semana de Diciembre a enero</td>
+              <td>Febrero a marzo dependiendo a temporada de lluvia</td>
+              <td>Alimento de vacas y ovinos</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4">Las fechas cambian según la lluvia y la altura de cada chacra.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <!-- Ganadería -->
+    <section class="lugares" aria-label="Ganadería">
+      <article class="lugar lugar--tierra">
+        <h2>Ganadería</h2>
+        <ul>
+          <li>Vacas: leche y queso.</li>
+          <li>Ovinos: lana y carne.</li>
+          <li>El forraje (avena y alfalfa) las alimenta todo el año.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto 2 · Sitio Web 2 · Mildred Zenia Huisa Nina · Ingeniería de Sistemas, Universidad Continental</p>
+  </footer>
+
+</body>
+</html>

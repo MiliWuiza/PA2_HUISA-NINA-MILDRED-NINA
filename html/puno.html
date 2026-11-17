@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conoce Puno con un mapa interactivo: Lago Titicaca, Uros, Taquile, Sillustani, la ciudad de Puno y Ayaviri.">
+  <meta name="author" content="Mildred Zenia Huisa Nina">
+  <meta name="keywords" content="Puno, Lago Titicaca, Ayaviri, Uros, Taquile, Sillustani">
+  <meta name="theme-color" content="#0d3b4a">
+  <title>Puno, mi región | Mildred</title>
+  <link rel="icon" type="image/svg+xml" href="../img/logop.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <a class="logo" href="../index.html"><img src="../img/logop.svg" alt=""></a>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="puno.html" aria-current="page">Puno</a></li>
+          <li><a href="cultivos.html">Cultivos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada">
+      <h1>Puno, la tierra del lago más alto</h1>
+      <p>Toca un punto del mapa para conocer cada lugar. Empezamos en Ayaviri, mi tierra, y recorremos el altiplano hasta el Lago Titicaca.</p>
+    </section>
+
+    <!-- Imagen interactiva: image map -->
+    <section class="mapa" aria-labelledby="titulo-mapa">
+      <h2 id="titulo-mapa" style="position:absolute;left:-9999px">Mapa interactivo de Puno</h2>
+      <figure>
+        <img id="mapa-img" src="../svg/mapa-puno.svg" width="800" height="500"
+             alt="Mapa de Puno con el Lago Titicaca y cinco lugares marcados" usemap="#mapa-puno">
+        <figcaption>Mapa esquemático de Puno hecho por mí. Haz clic en un punto para ir a su información.</figcaption>
+      </figure>
+      <map name="mapa-puno" id="mapa-puno">
+        <area shape="circle" coords="150,95,30"  href="#ayaviri"    alt="Ayaviri, mi tierra">
+        <area shape="circle" coords="280,235,30" href="#sillustani" alt="Sillustani, torres funerarias">
+        <area shape="circle" coords="400,335,30" href="#puno"       alt="Ciudad de Puno">
+        <area shape="circle" coords="470,300,30" href="#uros"       alt="Islas de los Uros">
+        <area shape="circle" coords="590,260,30" href="#taquile"    alt="Isla Taquile">
+        <area shape="rect"   coords="410,150,730,440" href="#lago"  alt="Lago Titicaca">
+      </map>
+    </section>
+
+    <!-- Información de cada zona -->
+    <section class="lugares" aria-label="Lugares de Puno">
+      <article class="lugar lugar--tierra" id="ayaviri">
+        <h2>Ayaviri, mi tierra</h2>
+        <p>Aquí la ganadería de vacas y ovinos es parte de la vida diaria. Se cultivan papa, quinua, avena y alfalfa. Su plato típico es el kankacho ayavireño y cada año se celebra la fiesta de la Virgen de Alta Gracia, con danzas.</p>
+      </article>
+      <article class="lugar" id="sillustani">
+        <h2>Sillustani</h2>
+        <p>Torres de piedra llamadas chullpas, construidas para enterrar a personas importantes. Están junto a la laguna Umayo y se ven desde lejos.</p>
+      </article>
+      <article class="lugar" id="puno">
+        <h2>Ciudad de Puno</h2>
+        <p>Capital de la región. Tiene la Plaza de Armas, la catedral y el mirador Kuntur Wasi, desde donde se ve la bahía del lago.</p>
+      </article>
+      <article class="lugar" id="uros">
+        <h2>Islas de los Uros</h2>
+        <p>Islas flotantes hechas con totora, una planta que crece en el lago. Las familias también usan la totora para sus casas y sus botes.</p>
+      </article>
+      <article class="lugar" id="taquile">
+        <h2>Isla Taquile</h2>
+        <p>Es famosa por sus tejidos hechos a mano. Sus pobladores conservan su forma de vestir y sus costumbres.</p>
+      </article>
+      <article class="lugar" id="lago">
+        <h2>Lago Titicaca</h2>
+        <p>Uno de los lagos navegables más altos del mundo, a unos 3 800 metros sobre el nivel del mar. Lo comparten Perú y Bolivia.</p>
+      </article>
+    </section>
+
+    <!-- Galería con picture + srcset -->
+    <section class="galeria" aria-labelledby="titulo-galeria">
+      <h2 id="titulo-galeria">Galería</h2>
+      <div class="galeria__rejilla">
+        <figure class="foto">
+          <picture>
+            <source media="(max-width:600px)" srcset="../img/lago-480.jpg">
+            <source media="(min-width:601px)" srcset="../img/lago-900.jpg">
+            <img src="../img/lago-900.jpg" alt="Vista del Lago Titicaca" loading="lazy">
+          </picture>
+          <figcaption>El Lago Titicaca al amanecer</figcaption>
+        </figure>
+        <figure class="foto">
+          <picture>
+            <source media="(max-width:600px)" srcset="../img/uros-480.jpg">
+            <source media="(min-width:601px)" srcset="../img/uros-900.jpg">
+            <img src="../img/uros-900.jpg" alt="Islas flotantes de totora" loading="lazy">
+          </picture>
+          <figcaption>Islas flotantes de los Uros</figcaption>
+        </figure>
+        <figure class="foto">
+          <picture>
+            <source media="(max-width:600px)" srcset="../img/taquile-480.jpg">
+            <source media="(min-width:601px)" srcset="../img/taquile-900.jpg">
+            <img src="../img/taquile-900.jpg" alt="Tejidos de la isla Taquile" loading="lazy">
+          </picture>
+          <figcaption>Tejidos de Taquile.</figcaption>
+        </figure>
+        <figure class="foto">
+          <img src="../img/sillustani-480.jpg"
+               srcset="../img/sillustani-480.jpg 480w, ../img/sillustani-900.jpg 900w"
+               sizes="(max-width:600px) 100vw, 25vw"
+               alt="Chullpas de Sillustani" loading="lazy">
+          <figcaption>Chullpas de Sillustani</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto 2 · Sitio Web 2 · Mildred Zenia Huisa Nina · Ingeniería de Sistemas, Universidad Continental</p>
+  </footer>
+
+  <script src="../js/mapa.js"></script>
+</body>
+</html>

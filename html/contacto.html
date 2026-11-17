@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Escríbeme para conocer más de Puno, Ayaviri y sus cultivos.">
+  <meta name="author" content="Mildred Zenia Huisa Nina">
+  <meta name="theme-color" content="#0d3b4a">
+  <title>Contacto | Mildred</title>
+  <link rel="icon" type="image/svg+xml" href="../img/logop.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <a class="logo" href="../index.html"><img src="../img/logop.svg" alt=""></a>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="puno.html">Puno</a></li>
+          <li><a href="cultivos.html">Cultivos</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="portada">
+      <h1>Escríbeme</h1>
+      <p>Cuéntame qué te gustaría conocer de Puno. Los campos con * son obligatorios.</p>
+    </section>
+
+    <section class="formulario-seccion" aria-labelledby="titulo-form">
+      <h2 id="titulo-form" style="position:absolute;left:-9999px">Formulario de contacto</h2>
+      <form id="form-contacto" class="formulario" action="#" method="get">
+
+        <div class="campo">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Quispe" autocomplete="name" required>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico *</label>
+          <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" autocomplete="email" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="987654321" pattern="[0-9]{9}" autocomplete="tel">
+          <small>9 dígitos, sin espacios.</small>
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha en que te gustaría visitar</label>
+          <input type="date" id="fecha" name="fecha">
+        </div>
+
+        <div class="campo">
+          <label for="lugar">Lugar que te interesa *</label>
+          <select id="lugar" name="lugar" required>
+            <option value="">Selecciona un lugar</option>
+            <option value="ayaviri">Ayaviri</option>
+            <option value="puno">Ciudad de Puno</option>
+            <option value="uros">Islas de los Uros</option>
+            <option value="taquile">Isla Taquile</option>
+            <option value="sillustani">Sillustani</option>
+          </select>
+        </div>
+
+        <fieldset class="campo">
+          <legend>¿Cómo prefieres que te responda?</legend>
+          <label class="opcion"><input type="radio" name="respuesta" value="correo" checked> Por correo</label>
+          <label class="opcion"><input type="radio" name="respuesta" value="telefono"> Por teléfono</label>
+        </fieldset>
+
+        <fieldset class="campo">
+          <legend>Me interesa saber de</legend>
+          <label class="opcion"><input type="checkbox" name="tema" value="cultivos"> Cultivos</label>
+          <label class="opcion"><input type="checkbox" name="tema" value="fiestas"> Fiestas y danzas</label>
+          <label class="opcion"><input type="checkbox" name="tema" value="comida"> Comida típica</label>
+        </fieldset>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="5" minlength="10" placeholder="Escribe tu mensaje aquí" required></textarea>
+        </div>
+
+        <button type="submit" class="boton">Enviar mensaje</button>
+        <p id="resultado" class="resultado" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto 2 · Sitio Web 2 · Mildred Zenia Huisa Nina · Ingeniería de Sistemas, Universidad Continental</p>
+  </footer>
+
+  <script src="../js/formulario.js"></script>
+</body>
+</html>
